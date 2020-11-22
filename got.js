@@ -10,7 +10,7 @@ console.log("\n")
 
 
     if (response.toUpperCase() === "YES") {
-        var userName = question.log(chalk.magenta("What is your name?"))
+        var userName = readlineSync.question(chalk.magenta("What is your name?"))
         console.log("\n")
         log(chalk.bgBlue("Hi " + userName + ". Let the game begin!"))
         console.log("\n")
@@ -39,7 +39,7 @@ console.log("\n")
 
         {
             var userAns = readlineSync.question(question)
-            if (userAns.toUpperCase() === answer) {
+            if (userAns.toUpperCase() === answer.toUpperCase()) {
                 score++
                 log(chalk.green("You know this answer! " + "\n" + "Points: " + score))
                 console.log("--------")
@@ -48,12 +48,13 @@ console.log("\n")
                 log(chalk.red("You know nothing, " + userName + " Snow :( " + "\n" + "Points: " + score))
                 console.log("--------")
             }
-
-            for (var i = 0; i < questions.lenght; i++) {
-                play(questions[i].question, questions[i].answer)
-            }
-
         }
+
+        for(var i=0;i<questions.length;i++)
+        {
+          play(questions[i].question, questions[i].answer)
+        }
+
         log(chalk.bgMagenta("Thanks for playing. Your total score is " + score + "\n"))
 
         log(chalk.yellowBright("\nPrevious Top Scorers:\nPragya: 3\nKriti: 2\nRahul: 2\n"))
@@ -67,6 +68,6 @@ console.log("\n")
                 break
             }
         }
-
-    } else
+    }
+    else
         console.log("Thanks for coming.. Goodbye!")

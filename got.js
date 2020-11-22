@@ -8,7 +8,7 @@ var readlineSync = require("readline-sync")
 var response = readlineSync.question(chalk.bold.white.bgBlue("Are you ready? (Yes/No) "))
 console.log("\n")
 
-{
+
     if (response.toUpperCase() === "YES") {
         var userName = question.log(chalk.magenta("What is your name?"))
         console.log("\n")

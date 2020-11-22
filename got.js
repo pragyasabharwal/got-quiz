@@ -48,7 +48,9 @@ console.log("\n")
                 console.log("--------") 
              }
 
-             for(var i=0;)
+             for(var i=0;i<questions.lenght;i++){
+                 play(questions[i].question, questions[i].answer)
+             }
           }
 
         
